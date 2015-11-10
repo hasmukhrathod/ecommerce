@@ -1,5 +1,6 @@
 class StoreController < ApplicationController
-  def index
-  	@products = Product.order(:title)
-  end
+	skip_before_action :authorize
+  	def index
+  		@products = Product.order(:title)
+  	end
 end
